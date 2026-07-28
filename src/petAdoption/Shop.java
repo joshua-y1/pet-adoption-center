@@ -221,7 +221,7 @@ public class Shop {
         System.out.println("What type of animal are you bringing in?");
         String animalTypes[] = {"Reptile", "Bird", "Mammal"};
         for (String animal : animalTypes){
-            System.out.println("animal");
+            System.out.println(animal);
         }
         String response = scnr.next();
         if (response.equalsIgnoreCase("Mammal")){
@@ -269,9 +269,8 @@ public class Shop {
                         itr.remove();
                         animalCount.remove(tempBird.getId());
                         Animal.setNumAnimals(Animal.getNumAnimals() - 1);
-                        Shop shopCred = new Shop();
-                        shopCred.setCredit(75);
-                        System.out.println("You now have a $" + shopCred.getCredit() + " credit");
+                        setCredit(75);
+                        System.out.println("You now have a $" + getCredit() + " credit");
                         System.out.println("Thank you for your business!");
                     }
                 }
@@ -285,9 +284,8 @@ public class Shop {
                         itr.remove();
                         animalCount.remove(tempReptile.getId());
                         Animal.setNumAnimals(Animal.getNumAnimals() - 1);
-                        Shop shopCred = new Shop();
-                        shopCred.setCredit(50);
-                        System.out.println("You now have a $" + shopCred.getCredit() + " credit");
+                        setCredit(50);
+                        System.out.println("You now have a $" + getCredit() + " credit");
                         System.out.println("Thank you for your business!");
                     }
                 }
@@ -324,9 +322,8 @@ public class Shop {
                         itr.remove();
                         animalCount.remove(tempMam.getId());
                         Animal.setNumAnimals(Animal.getNumAnimals() - 1);
-                        Shop shopCred = new Shop();
-                        shopCred.setCredit(shopCred.getCredit() - 75);
-                        System.out.println("A " + shopCred.getCredit() + " charge is added to your account. Thank you for your business!");
+                        setCredit(getCredit() - 75);
+                        System.out.println("A " + getCredit() + " charge is added to your account. Thank you for your business!");
                     }
                 }
             } else if (response2 == 3){
@@ -352,9 +349,8 @@ public class Shop {
                         itr.remove();
                         animalCount.remove(tempReptile.getId());
                         Animal.setNumAnimals(Animal.getNumAnimals() - 1);
-                        Shop shopCred = new Shop();
-                        shopCred.setCredit(shopCred.getCredit() - 25);
-                        System.out.println("You now have a $" + shopCred.getCredit() + " charge to your account");
+                        setCredit(getCredit() - 25);
+                        System.out.println("You now have a $" + getCredit() + " charge to your account");
                         System.out.println("Thank you for your business!");
                     }
                 }
@@ -391,9 +387,8 @@ public class Shop {
                         itr.remove();
                         animalCount.remove(tempMam.getId());
                         Animal.setNumAnimals(Animal.getNumAnimals() - 1);
-                        Shop shopCred = new Shop();
-                        shopCred.setCredit(shopCred.getCredit() - 50);
-                        System.out.println("A " + shopCred.getCredit() + " charge is added to your account. Thank you for your business!");
+                        setCredit(getCredit() - 50);
+                        System.out.println("A " + getCredit() + " charge is added to your account. Thank you for your business!");
                     }
                 }
             } else if (response3 == 3){
@@ -406,9 +401,8 @@ public class Shop {
                         itr.remove();
                         animalCount.remove(tempBird.getId());
                         Animal.setNumAnimals(Animal.getNumAnimals() - 1);
-                        Shop shopCred = new Shop();
-                        shopCred.setCredit(25);
-                        System.out.println("You have received a $" + shopCred.getCredit() + " credit to your account");
+                        setCredit(25);
+                        System.out.println("You have received a $" + getCredit() + " credit to your account");
                         System.out.println("Thank you for your business!");
                     }
                 }
@@ -436,11 +430,11 @@ public class Shop {
         System.out.println("3. Exchange");
         int choice = scnr.nextInt();
         if (choice == 1) {
-            shop2.initiateAdopt(scnr);
+            initiateAdopt(scnr);
         } else if (choice == 2) {
-            shop2.initiateSell(scnr);
+            initiateSell(scnr);
         } else if (choice == 3) {
-            shop2.initiateExchange(scnr);
+            initiateExchange(scnr);
         } else {
             System.out.println("thanks for stopping by!");
         }
