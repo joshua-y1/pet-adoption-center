@@ -10,7 +10,7 @@ public class Reptile extends Animal {
         super();
         species = "Reptile";
         reptileType = "TBD";
-        furColor = "blank";
+        scalesColor = "blank";
         price = 50;
     }
     @Override
@@ -37,7 +37,7 @@ public class Reptile extends Animal {
         reptileType = rt;
         age = a;
         weight = w;
-        furColor = sc;
+        scalesColor = sc;
         species = "Reptile";
         price = 50;
     }
@@ -58,6 +58,6 @@ public class Reptile extends Animal {
     public void printInfo(Object Reptile){
         System.out.println("Type: " + this.getReptileType());
         super.printInfo(Reptile);
-        System.out.println("Scales: " + this.getFurColor());
+        System.out.println("Scales: " + this.getScalesColor());
     }
 }
